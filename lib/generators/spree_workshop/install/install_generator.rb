@@ -14,7 +14,7 @@ module SpreeWorkshop
 
       def add_datas
         run 'mkdir db/default' unless Dir.exist?('db/default')
-        copy_file "towns.csv", "db/default/towns.csv"
+        copy_file "towns.yml", "db/default/spree/towns.yml"
       end
 
       def add_migrations

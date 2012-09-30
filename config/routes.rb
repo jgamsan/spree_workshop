@@ -1,5 +1,4 @@
 Spree::Core::Engine.routes.draw do
-  namespace :spree do resources :workshops end
-
-  # Add your extension routes here
+  resources :workshops
+  match 'workshops/update_town_select/:id' => 'workshops#update_town_select'
 end

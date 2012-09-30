@@ -12,6 +12,11 @@ module SpreeWorkshop
         inject_into_file 'app/assets/stylesheets/admin/all.css', " *= require admin/spree_workshop\n", :before => /\*\//, :verbose => true
       end
 
+      def add_datas
+        run 'mkdir db/default' unless Dir.exist?('db/default')
+        copy_file "towns.csv", "db/default/towns.csv"
+      end
+
       def add_migrations
         run 'bundle exec rake railties:install:migrations FROM=spree_workshop'
       end

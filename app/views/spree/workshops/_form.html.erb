@@ -1,17 +1,49 @@
-<%= form_for(@spree_workshop) do |f| %>
-  <% if @spree_workshop.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@spree_workshop.errors.count, "error") %> prohibited this spree_workshop from being saved:</h2>
-
-      <ul>
-      <% @spree_workshop.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<%= render :partial => 'spree/shared/error_messages', :locals => { :target => @workshop } %>
+<h1><%= t('.workshop') %></h1>
+<%= form_for(@workshop) , :url => workshops_path do |f| %>
+  <p>
+    <%= f.label t('.name') %>
+    <span class="required">*</span><br/>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label t('.address') %>
+    <span class="required">*</span><br/>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label t('.province') %>
+    <span class="required">*</span><br/>
+    <%= f.collection_select(:province, Spree::State.where(:country_id => 188), :id, :name, { :include_blank => true }, { 'style' => 'width:60px' }) %>
+  </p>
+  <p>
+    <div class="type-select" id="workshopTowns">
+      <%= render :partial => 'towns' %>
     </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  </p>
+  <p>
+    <%= f.label t('.phone') %>
+    <span class="required">*</span><br/>
+    <%= f.text_field :phone %>
+  </p>
+  <p>
+    <%= f.label t('.fax') %>
+    <%= f.text_field :fax %>
+  </p>
+  <p>
+    <%= f.label t('.email') %>
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.label t('.notes') %>
+    <%= f.text_field :notes %>
+  </p>
+  <p>
+    <%= f.label t('.price') %>
+    <span class="required">*</span><br/>
+    <%= f.text_field :price %>
+  </p>
+  <p>
+    <%= f.submit t('.submit'), :alt => t('.submit'), :id => 'workshop_submit', :title => t('.submit') %>
+  </p>
 <% end %>

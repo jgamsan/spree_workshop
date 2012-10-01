@@ -1,8 +1,10 @@
-class Spree::WorkshopsController < Spree::BaseController
+module Spree
+  class WorkshopsController < BaseController
 
-  def update_town_select
-    towns = Spree::Town.where(:province_id => params[:id]).order(:name) unless params[:id].blank?
-    render :partial => "towns", :locals => { :towns => towns}
+    def update_town_select
+      towns = Spree::Town.where(:province_id => params[:id]).order(:name) unless params[:id].blank?
+      render :partial => "towns", :locals => { :towns => towns}
+    end
+
   end
-
 end

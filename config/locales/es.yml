@@ -1,6 +1,7 @@
 es:
   spree:
     workshops:
+      workshop: "Alta Taller"
       form:
         name: "Nombre"
         address: "Direccion"
@@ -12,3 +13,5 @@ es:
         price_for_car: "Precio Montaje para Automoviles"
         price_for_moto: "Precio Montaje para Motos"
         submit: "Enviar"
+      notices:
+        success: "Se ha registrado el Taller Satisfactoriamente."

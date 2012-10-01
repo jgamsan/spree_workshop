@@ -5,7 +5,7 @@ module Spree
       @workshop = Spree::Workshop.new(params[:workshop])
 
       if @workshop.save
-        redirect_to('/', :notice => t('spree.contact_us.notices.success'))
+        redirect_to('/', :notice => t('spree.workshop.notices.success'))
       else
         render :new
       end

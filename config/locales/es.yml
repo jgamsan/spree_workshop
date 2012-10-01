@@ -1,7 +1,7 @@
 es:
   spree:
     workshops:
-      new:
+      form:
         name: "Nombre"
         address: "Direccion"
         province: "Provincia"
@@ -11,3 +11,4 @@ es:
         notes: "Notas"
         price_for_car: "Precio Montaje para Automoviles"
         price_for_moto: "Precio Montaje para Motos"
+        submit: "Enviar"

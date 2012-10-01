@@ -10,8 +10,8 @@ es:
         fax: "Fax"
         email: "Email"
         notes: "Notas"
-        price_for_car: "Precio Montaje para Automoviles"
-        price_for_moto: "Precio Montaje para Motos"
+        price_for_car: "Precio Montaje Automoviles"
+        price_for_moto: "Precio Montaje Motos"
         submit: "Enviar"
         town: "Poblacion"
     workshop:

@@ -1,6 +1,6 @@
 <%= fields_for 'workshop' do |f| %>
   <% if towns.blank? %>
-    <%= f.collection_select :town_id, Spree::Town.all, :id, :name, :label => "Ciudad" %>
+    <%= f.collection_select :town_id, [], :label => "Ciudad" %>
   <% else %>
     <%= f.collection_select :town_id, :collection => towns.collect{ |s| [s.name,s.id]}, :label => "Ciudad", :include_blank => false %>
   <% end %>

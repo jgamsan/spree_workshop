@@ -4,7 +4,7 @@ module Spree
     def create
       @workshop = Spree::Workshop.new(params[:workshop])
 
-      if @contact.save
+      if @workshop.save
         redirect_to('/', :notice => t('spree.contact_us.notices.success'))
       else
         render :new

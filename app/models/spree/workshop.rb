@@ -1,7 +1,7 @@
 module Spree
   class Workshop < ActiveRecord::Base
     attr_accessible :name, :address, :town_id, :phone, :fax, :email, :notes,
-                    :price_for_car, :price_for_moto
+                    :price_for_car, :price_for_moto, :province
     attr_accessor :province
 
     validates_format_of :email,

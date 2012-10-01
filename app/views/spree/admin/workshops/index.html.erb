@@ -7,6 +7,8 @@
     <th><%= t(:name) %></th>
     <th><%= t(:address) %></th>
     <th><%= t(:town) %></th>
+    <th><%= t(:price_for_car) %></th>
+    <th><%= t(:price_for_moto) %></th>
     <th data-hook="admin_workshops_index_header_actions">
     </th>
   </thead>
@@ -16,7 +18,9 @@
         <td width="40px"><%= workshop.name %></td>
         <td width="60px"><%= workshop.address %></td>
         <td width="60px"><%= workshop.town.name %>(<%= workshop.town.state.name %>)</td>
-        <td width="140px" data-hook="admin_workshops_index_row_actions">
+        <td width="60px"><%= number_to_currency(workshop.price_for_car) %></td>
+        <td width="60px"><%= number_to_currency(workshop.price_for_moto) %></td>
+        <td width="40px" data-hook="admin_workshops_index_row_actions">
           <%= link_to_edit workshop %> &nbsp;
           <%= link_to_delete workshop %>
         </td>

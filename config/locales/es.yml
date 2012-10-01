@@ -13,5 +13,6 @@ es:
         price_for_car: "Precio Montaje para Automoviles"
         price_for_moto: "Precio Montaje para Motos"
         submit: "Enviar"
+    workshop:
       notices:
         success: "Se ha registrado el Taller Satisfactoriamente."

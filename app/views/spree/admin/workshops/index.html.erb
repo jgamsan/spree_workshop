@@ -11,7 +11,9 @@
   <tbody>
     <% @workshops.each do |workshop|%>
       <tr id="<%= spree_dom_id workshop %>" data-hook="admin_workshops_index_rows">
-        <td width="60px"><%= workshop.name %></td>
+        <td width="40px"><%= workshop.name %></td>
+        <td width="60px"><%= workshop.address %></td>
+        <td width="60px"><%= workshop.town.name(workshop.town.state.name) %></td>
         <td width="140px" data-hook="admin_workshops_index_row_actions">
           <%= link_to_edit workshop %> &nbsp;
           <%= link_to_delete workshop %>

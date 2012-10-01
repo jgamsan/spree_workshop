@@ -16,7 +16,7 @@ module Spree
   end
 
     def update_town_select
-      towns = Spree::Town.where(:province_id => params[:id]).order(:name) unless params[:id].blank?
+      towns = Spree::Town.where(:state_id => params[:id]).order(:name) unless params[:id].blank?
       render :partial => "towns", :locals => { :towns => towns}
     end
 

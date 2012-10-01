@@ -1,52 +1,56 @@
 <%= render :partial => 'spree/shared/error_messages', :locals => { :target => @workshop } %>
 <%= form_for @workshop do |f| %>
-  <p>
-    <%= f.label t('.name') %>
-    <span class="required">*</span><br/>
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label t('.address') %>
-    <span class="required">*</span><br/>
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label t('.province') %>
-    <span class="required">*</span><br/>
-    <%= f.collection_select(:province, Spree::State.where(:country_id => 188), :id, :name, { :include_blank => true }, { 'style' => 'width:160px' }) %>
-  </p>
-  <p>
-    <div class="type-select" id="workshopTowns">
-      <%= render :partial => 'towns' %>
-    </div>
-  </p>
-  <p>
-    <%= f.label t('.phone') %>
-    <span class="required">*</span><br/>
-    <%= f.text_field :phone %>
-  </p>
-  <p>
-    <%= f.label t('.fax') %>
-    <%= f.text_field :fax %>
-  </p>
-  <p>
-    <%= f.label t('.email') %>
-    <%= f.text_field :email %>
-  </p>
-  <p>
-    <%= f.label t('.notes') %>
-    <%= f.text_field :notes %>
-  </p>
-  <p>
-    <%= f.label t('.price_for_car') %>
-    <span class="required">*</span><br/>
-    <%= f.text_field :price_for_car %>
-  </p>
-  <p>
-    <%= f.label t('.price_for_moto') %>
-    <span class="required">*</span><br/>
-    <%= f.text_field :price_for_moto %>
-  </p>
+  <div class="eight columns alpha">
+    <p>
+      <%= f.label t('.name') %>
+      <span class="required">*</span><br/>
+      <%= f.text_field :name %>
+    </p>
+    <p>
+      <%= f.label t('.address') %>
+      <span class="required">*</span><br/>
+      <%= f.text_field :name %>
+    </p>
+    <p>
+      <%= f.label t('.province') %>
+      <span class="required">*</span><br/>
+      <%= f.collection_select(:province, Spree::State.where(:country_id => 188), :id, :name, { :include_blank => true }, { 'style' => 'width:160px' }) %>
+    </p>
+    <p>
+      <div class="type-select" id="workshopTowns">
+        <%= render :partial => 'towns' %>
+      </div>
+    </p>
+  </div>
+  <div class="eight columns omega">
+    <p>
+      <%= f.label t('.phone') %>
+      <span class="required">*</span><br/>
+      <%= f.text_field :phone %>
+    </p>
+    <p>
+      <%= f.label t('.fax') %>
+      <%= f.text_field :fax %>
+    </p>
+    <p>
+      <%= f.label t('.email') %>
+      <%= f.text_field :email %>
+    </p>
+    <p>
+      <%= f.label t('.notes') %>
+      <%= f.text_field :notes %>
+    </p>
+    <p>
+      <%= f.label t('.price_for_car') %>
+      <span class="required">*</span><br/>
+      <%= f.text_field :price_for_car %>
+    </p>
+    <p>
+      <%= f.label t('.price_for_moto') %>
+      <span class="required">*</span><br/>
+      <%= f.text_field :price_for_moto %>
+    </p>
+  </div>
   <p>
     <%= f.submit t('.submit'), :alt => t('.submit'), :id => 'workshop_submit', :title => t('.submit') %>
   </p>

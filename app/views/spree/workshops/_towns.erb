@@ -2,6 +2,6 @@
   <% if towns.blank? %>
     <%= f.collection_select :town_id, [], :id, :name, :label => "Ciudad" %>
   <% else %>
-    <%= f.collection_select :town_id, :collection => towns.collect{ |s| [s.name,s.id]}, :label => "Ciudad", :include_blank => false %>
+    <%= f.select :town_id, :collection => towns.collect{ |s| [s.name,s.id]}, :label => "Ciudad", :include_blank => false %>
   <% end %>
 <% end %>

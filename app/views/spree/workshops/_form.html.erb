@@ -39,9 +39,14 @@
     <%= f.text_field :notes %>
   </p>
   <p>
-    <%= f.label t('.price') %>
+    <%= f.label t('.price_for_car') %>
     <span class="required">*</span><br/>
-    <%= f.text_field :price %>
+    <%= f.text_field :price_for_car %>
+  </p>
+  <p>
+    <%= f.label t('.price_for_moto') %>
+    <span class="required">*</span><br/>
+    <%= f.text_field :price_for_moto %>
   </p>
   <p>
     <%= f.submit t('.submit'), :alt => t('.submit'), :id => 'workshop_submit', :title => t('.submit') %>

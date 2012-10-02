@@ -15,5 +15,7 @@ es:
         submit: "Enviar"
         town: "Poblacion"
     workshop:
+      new:
+        workshop: "Talleres"
       notices:
         success: "Se ha registrado el Taller Satisfactoriamente."

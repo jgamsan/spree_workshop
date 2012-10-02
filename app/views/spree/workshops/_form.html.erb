@@ -17,7 +17,8 @@
       <%= f.collection_select(:province, Spree::State.where(:country_id => 188), :id, :name, { :include_blank => true }, { 'style' => 'width:160px' }) %>
     </p>
     <p>
-      <div class="type-select" id="workshopTowns">
+      <%= f.label t('.town') %>
+      <div id="workshopTowns">
         <%= render :partial => 'towns' %>
       </div>
     </p>

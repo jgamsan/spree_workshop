@@ -3,6 +3,7 @@ module Spree
 
     def index
       @states = Spree::State.where(:country_id => 188)
+      @list_workshops = Spree::Workshop.all_states.order(:name).page params[:page]
       respond_to do |format|
         format.html
         format.js

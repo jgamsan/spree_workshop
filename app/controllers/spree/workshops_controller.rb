@@ -1,8 +1,14 @@
 module Spree
   class WorkshopsController < BaseController
 
-    def index
+    def search
       @states = Spree::State.where(:country_id => 188)
+      @list_workshops = Spree::Workshop.by_state(params[:id]).order(:name).page params[:page]
+
+      respond_to do |format|
+        format.html {index.erb}
+        format.js
+      end
     end
 
     def create
@@ -25,7 +31,7 @@ module Spree
   end
 
   def update_workshop_list
-    list_workshops = Spree::Workshop.by_state(params[:id]).order(:name) unless params[:id].blank?
+
     provincia = Spree::State.find(params[:id]).name
     if list_workshops.empty?
       @message = "No existen talleres concertados en la Provincia de #{provincia}"

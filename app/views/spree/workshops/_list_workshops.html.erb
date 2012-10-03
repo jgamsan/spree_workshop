@@ -1,25 +1,25 @@
-<% if @message.nil? -%>
-  <h3>""</h3>
-<% elsif @message.blank? -%>
-  <h3><%= @message %></h3>
-<% else -%>
-  <table>
-    <tr>
-      <th><%= t('spree.workshops.form.name') %></th>
-      <th><%= t('spree.workshops.form.address') %></th>
-      <th><%= t('spree.workshops.form.town') %></th>
-      <th><%= t('spree.workshops.form.price_for_car') %></th>
-      <th><%= t('spree.workshops.form.price_for_moto') %></th>
-    </tr>
-
-    <% list_workshops.each do |workshop| %>
+<% unless @message.nil? -%>
+  <% if @message.blank? -%>
+    <table>
       <tr>
-        <td width="50px"><%= workshop.name %></td>
-        <td width="60px"><%= workshop.address %></td>
-        <td width="60px"><%= workshop.town.name %>(<%= workshop.town.state.name %>)</td>
-        <td width="40px"><%= number_to_currency(workshop.price_for_car) %></td>
-        <td width="40px"><%= number_to_currency(workshop.price_for_moto) %></td>
+        <th><%= t('spree.workshops.form.name') %></th>
+        <th><%= t('spree.workshops.form.address') %></th>
+        <th><%= t('spree.workshops.form.town') %></th>
+        <th><%= t('spree.workshops.form.price_for_car') %></th>
+        <th><%= t('spree.workshops.form.price_for_moto') %></th>
       </tr>
-    <% end %>
-  </table>
+
+      <% list_workshops.each do |workshop| %>
+        <tr>
+          <td width="50px"><%= workshop.name %></td>
+          <td width="60px"><%= workshop.address %></td>
+          <td width="60px"><%= workshop.town.name %>(<%= workshop.town.state.name %>)</td>
+          <td width="40px"><%= number_to_currency(workshop.price_for_car) %></td>
+          <td width="40px"><%= number_to_currency(workshop.price_for_moto) %></td>
+        </tr>
+      <% end %>
+    </table>
+  <% else -%>
+    <h3><%= @message %></h3>
+  <% end -%>
 <% end -%>

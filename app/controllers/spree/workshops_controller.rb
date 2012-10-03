@@ -26,7 +26,13 @@ module Spree
 
   def update_workshop_list
     list_workshops = Spree::Workshop.by_state(params[:id]).order(:name) unless params[:id].blank?
-    render :partial => "list_workshops", :locals => { :list_workshops => list_workshops}
+    provincia = Spree::State.find(params[:id]).name
+    if list_workshops.empty?
+      message = "No existen talleres concertados en la Provincia de #{provincia}"
+    else
+      message = ""
+    end
+    render :partial => "list_workshops", :locals => { :list_workshops => list_workshops, :message => message}
   end
 
   end

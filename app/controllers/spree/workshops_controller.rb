@@ -3,7 +3,7 @@ module Spree
 
     def search
       @states = Spree::State.where(:country_id => 188)
-      @list_workshops = Spree::Workshop.by_state(params[:id]).order(:name).page params[:page]
+      @list_workshops = Spree::Workshop.by_state(params[:Provincia]).order(:name).page params[:page]
 
       respond_to do |format|
         format.html

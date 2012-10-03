@@ -1,8 +1,15 @@
 module Spree
   class WorkshopsController < BaseController
 
-    def search
+    def index
       @states = Spree::State.where(:country_id => 188)
+      respond_to do |format|
+        format.html
+        format.js
+      end
+    end
+
+    def search
       @list_workshops = Spree::Workshop.by_state(params[:Provincia]).order(:name).page params[:page]
 
       respond_to do |format|

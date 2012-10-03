@@ -1,0 +1,2 @@
+$('#list_workshops').html('<%= escape_javascript render(@list_workshops) %>');
+$('#paginator').html('<%= escape_javascript(paginate(@list_workshops, :remote => true).to_s) %>');

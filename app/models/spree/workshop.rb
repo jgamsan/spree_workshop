@@ -13,6 +13,6 @@ module Spree
     scope :by_state, lambda { |state|
     joins(:town).where("spree_towns.state_id = ?", state)
   }
-    scope :all_states, joins(:town).all
+    scope :all_states, joins(:town)
   end
 end

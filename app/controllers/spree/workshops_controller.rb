@@ -6,7 +6,7 @@ module Spree
       @list_workshops = Spree::Workshop.by_state(params[:id]).order(:name).page params[:page]
 
       respond_to do |format|
-        format.html {index.erb}
+        format.html {search.html.erb}
         format.js
       end
     end

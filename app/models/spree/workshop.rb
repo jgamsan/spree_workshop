@@ -10,5 +10,9 @@ module Spree
                         :unless => "email.blank?"
     validates :town_id, :address, :name, :presence => true
 
+    scope :by_state, lambda { |state|
+    joins(:town).where("spree_towns.state_id = ?", state)
+  }
+
   end
 end

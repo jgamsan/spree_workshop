@@ -3,7 +3,7 @@ module Spree
 
     def index
       @states = Spree::State.where(:country_id => 188)
-      @list_workshops = Spree::Workshop.all_states.order(:name).page params[:page]
+      @workshops = Spree::Workshop.all_states.order(:name).page params[:page]
       respond_to do |format|
         format.html
         format.js
@@ -11,7 +11,7 @@ module Spree
     end
 
     def search
-      @list_workshops = Spree::Workshop.by_state(params[:Provincia]).order(:name).page params[:page]
+      @workshops = Spree::Workshop.by_state(params[:Provincia]).order(:name).page params[:page]
 
       respond_to do |format|
         format.html
@@ -29,25 +29,13 @@ module Spree
       end
     end
 
-  def new
-    @workshop = Spree::Workshop.new
-  end
-
-  def update_town_select
-    towns = Spree::Town.where(:state_id => params[:id]).order(:name) unless params[:id].blank?
-    render :partial => "towns", :locals => { :towns => towns}
-  end
-
-  def update_workshop_list
-
-    provincia = Spree::State.find(params[:id]).name
-    if list_workshops.empty?
-      @message = "No existen talleres concertados en la Provincia de #{provincia}"
-    else
-      @message = ""
+    def new
+      @workshop = Spree::Workshop.new
     end
-    render :partial => "list_workshops", :locals => { :list_workshops => list_workshops}
-  end
 
+    def update_town_select
+      towns = Spree::Town.where(:state_id => params[:id]).order(:name) unless params[:id].blank?
+      render :partial => "towns", :locals => { :towns => towns}
+    end
   end
 end

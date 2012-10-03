@@ -16,9 +16,9 @@
     <th width="170px"><%= t('spree.workshops.form.price_for_moto') %></th>
   </tr>
   <tbody id="list">
-    <%= render :partial => @list_workshops %>
+    <%= render :partial => @workshops %>
   </tbody>
 </table>
 <div id="paginator" class="pagination">
-  <%= paginate @list_workshops, :remote => true %>
+  <%= paginate @workshops, :remote => true %>
 </div>

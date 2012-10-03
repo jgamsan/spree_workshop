@@ -1,7 +1,7 @@
-<% if message.blank? -%>
-  <h3><%= message %></h3>
-<% elsif message.nil? -%>
+<% if message.nil? -%>
   <h3>""</h3>
+<% elsif message.blank? -%>
+  <h3><%= message %></h3>
 <% else -%>
   <table>
     <tr>

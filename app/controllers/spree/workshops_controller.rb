@@ -1,6 +1,10 @@
 module Spree
   class WorkshopsController < BaseController
 
+    def index
+      @states = Spree::State.where(:country_id => 188)
+    end
+
     def create
       @workshop = Spree::Workshop.new(params[:workshop])
 
@@ -15,10 +19,15 @@ module Spree
     @workshop = Spree::Workshop.new
   end
 
-    def update_town_select
-      towns = Spree::Town.where(:state_id => params[:id]).order(:name) unless params[:id].blank?
-      render :partial => "towns", :locals => { :towns => towns}
-    end
+  def update_town_select
+    towns = Spree::Town.where(:state_id => params[:id]).order(:name) unless params[:id].blank?
+    render :partial => "towns", :locals => { :towns => towns}
+  end
+
+  def update_workshop_list
+    list_workshops = Spree::Workshop.by_state(params[:id]).order(:name) unless params[:id].blank?
+    render :partial => "list_workshops", :locals => { :list_workshops => list_workshops}
+  end
 
   end
 end

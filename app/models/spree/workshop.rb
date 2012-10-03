@@ -8,5 +8,7 @@ module Spree
                         :with    => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i,
                         :message => "email incorrecto",
                         :unless => "email.blank?"
+    validates :town_id, :address, :name, :presence => true
+
   end
 end

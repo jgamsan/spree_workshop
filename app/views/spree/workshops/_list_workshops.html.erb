@@ -1,0 +1,23 @@
+<% if list_workshops.blank? -%>
+
+<% else -%>
+  <table>
+    <tr>
+      <th><%= t('spree.workshops.form.name') %></th>
+      <th><%= t('spree.workshops.form.address') %></th>
+      <th><%= t('spree.workshops.form.town') %></th>
+      <th><%= t('spree.workshops.form.price_for_car') %></th>
+      <th><%= t('spree.workshops.form.price_for_moto') %></th>
+    </tr>
+
+    <% list_workshops.each do |workshop| %>
+      <tr>
+        <td width="50px"><%= workshop.name %></td>
+        <td width="60px"><%= workshop.address %></td>
+        <td width="60px"><%= workshop.town.name %>(<%= workshop.town.state.name %>)</td>
+        <td width="40px"><%= number_to_currency(workshop.price_for_car) %></td>
+        <td width="40px"><%= number_to_currency(workshop.price_for_moto) %></td>
+      </tr>
+    <% end %>
+  </table>
+<% end -%>

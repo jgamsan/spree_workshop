@@ -2,6 +2,7 @@ es:
   spree:
     workshops:
       workshop: "Alta Taller"
+      search: "Buscar Taller"
       form:
         name: "Nombre"
         address: "Direccion"

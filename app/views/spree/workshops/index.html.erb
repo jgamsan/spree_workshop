@@ -1,21 +1,8 @@
-<h1>Listing spree_workshops</h1>
+<h1>Buscando Taller</h1>
 
-<table>
-  <tr>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @spree_workshops.each do |spree_workshop| %>
-  <tr>
-    <td><%= link_to 'Show', spree_workshop %></td>
-    <td><%= link_to 'Edit', edit_spree_workshop_path(spree_workshop) %></td>
-    <td><%= link_to 'Destroy', spree_workshop, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+<%= select_tag "Provincia", options_from_collection_for_select(@states, "id", "name") %>
 
 <br />
-
-<%= link_to 'New Workshop', new_spree_workshop_path %>
+<div id="workshopsList">
+  <%= render :partial => 'list_workshops' %>
+</div>

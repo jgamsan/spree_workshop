@@ -2,20 +2,20 @@
   <% if @message.blank? -%>
     <table>
       <tr>
-        <th width="70px"><%= t('spree.workshops.form.name') %></th>
-        <th width="70px"><%= t('spree.workshops.form.address') %></th>
-        <th width="70px"><%= t('spree.workshops.form.town') %></th>
-        <th width="70px"><%= t('spree.workshops.form.price_for_car') %></th>
-        <th width="70px"><%= t('spree.workshops.form.price_for_moto') %></th>
+        <th width="170px"><%= t('spree.workshops.form.name') %></th>
+        <th width="170px"><%= t('spree.workshops.form.address') %></th>
+        <th width="170px"><%= t('spree.workshops.form.town') %></th>
+        <th width="170px"><%= t('spree.workshops.form.price_for_car') %></th>
+        <th width="170px"><%= t('spree.workshops.form.price_for_moto') %></th>
       </tr>
 
       <% list_workshops.each do |workshop| %>
         <tr>
-          <td width="70px"><%= workshop.name %></td>
-          <td width="70px"><%= workshop.address %></td>
-          <td width="70px"><%= workshop.town.name %>(<%= workshop.town.state.name %>)</td>
-          <td width="70px"><%= number_to_currency(workshop.price_for_car) %></td>
-          <td width="70px"><%= number_to_currency(workshop.price_for_moto) %></td>
+          <td width="170px"><%= workshop.name %></td>
+          <td width="170px"><%= workshop.address %></td>
+          <td width="170px"><%= workshop.town.name %>(<%= workshop.town.state.name %>)</td>
+          <td width="170px"><%= number_to_currency(workshop.price_for_car) %></td>
+          <td width="170px"><%= number_to_currency(workshop.price_for_moto) %></td>
         </tr>
       <% end %>
     </table>

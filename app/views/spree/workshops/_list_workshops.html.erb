@@ -14,8 +14,8 @@
           <td width="70px"><%= workshop.name %></td>
           <td width="70px"><%= workshop.address %></td>
           <td width="70px"><%= workshop.town.name %>(<%= workshop.town.state.name %>)</td>
-          <td width="50px"><%= number_to_currency(workshop.price_for_car) %></td>
-          <td width="50px"><%= number_to_currency(workshop.price_for_moto) %></td>
+          <td width="70px"><%= number_to_currency(workshop.price_for_car) %></td>
+          <td width="70px"><%= number_to_currency(workshop.price_for_moto) %></td>
         </tr>
       <% end %>
     </table>

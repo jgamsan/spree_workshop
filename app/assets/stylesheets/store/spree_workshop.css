@@ -19,6 +19,8 @@ table.index th {
   table.index td {
     background-color: #fff;
     border-bottom:1px solid #ddd;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
     padding: 3px 10px;
   }
   table.index td.lbl-col {

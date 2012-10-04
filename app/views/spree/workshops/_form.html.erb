@@ -23,34 +23,35 @@
         <%= render :partial => 'towns' %>
       </div>
     </p>
+    <p>
+      <%= f.label t('.notes') %><br/>
+      <%= f.text_area :notes, :size => "20x5" %>
+    </p>
   </div>
   <div class="eight columns omega">
     <p>
       <%= f.label t('.phone') %>
       <span class="required">*</span><br/>
-      <%= f.text_field :phone %>
+      <%= f.telephone_field :phone %>
     </p>
     <p>
       <%= f.label t('.fax') %><br/>
-      <%= f.text_field :fax %>
+      <%= f.telephone_field :fax %>
     </p>
     <p>
       <%= f.label t('.email') %><br/>
-      <%= f.text_field :email %>
+      <%= f.email_field :email %>
     </p>
-    <p>
-      <%= f.label t('.notes') %><br/>
-      <%= f.text_field :notes %>
-    </p>
+
     <p>
       <%= f.label t('.price_for_car') %>
       <span class="required">*</span><br/>
-      <%= f.text_field :price_for_car %>
+      <%= f.number_field :price_for_car %>
     </p>
     <p>
       <%= f.label t('.price_for_moto') %>
       <span class="required">*</span><br/>
-      <%= f.text_field :price_for_moto %>
+      <%= f.number_field :price_for_moto %>
     </p>
   </div>
   <p>

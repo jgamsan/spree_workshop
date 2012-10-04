@@ -8,5 +8,11 @@ module Spree
                         :with    => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i,
                         :message => "email incorrecto",
                         :unless => "email.blank?"
+    validates :town_id, :address, :name, :presence => true
+
+    scope :by_state, lambda { |state|
+    joins(:town).where("spree_towns.state_id = ?", state)
+  }
+    scope :all_states, joins(:town)
   end
 end

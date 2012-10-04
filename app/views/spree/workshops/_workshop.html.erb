@@ -1,0 +1,7 @@
+<tr>
+  <td><%= workshop.name %></td>
+  <td><%= workshop.address %></td>
+  <td><%= workshop.town.name %>(<%= workshop.town.state.name %>)</td>
+  <td><%= number_to_currency(workshop.price_for_car) %></td>
+  <td><%= number_to_currency(workshop.price_for_moto) %></td>
+</tr>

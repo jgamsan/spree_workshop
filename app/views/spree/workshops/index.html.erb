@@ -1,21 +1,25 @@
-<h1>Listing spree_workshops</h1>
-
-<table>
-  <tr>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @spree_workshops.each do |spree_workshop| %>
-  <tr>
-    <td><%= link_to 'Show', spree_workshop %></td>
-    <td><%= link_to 'Edit', edit_spree_workshop_path(spree_workshop) %></td>
-    <td><%= link_to 'Destroy', spree_workshop, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
-
+<h1>Buscando Taller</h1>
 <br />
+<%= form_tag search_workshops_path, :method => 'get', :remote => true do %>
+  <%= select_tag "Provincia", options_from_collection_for_select(@states, "id", "name") %>
+  <%= submit_tag "Buscar" %>
+<% end -%>
 
-<%= link_to 'New Workshop', new_spree_workshop_path %>
+<br /><br /><br />
+  <% unless @workshops.empty? -%>
+    <table class="index">
+      <tr>
+        <th><%= t('spree.workshops.form.name') %></th>
+        <th><%= t('spree.workshops.form.address') %></th>
+        <th><%= t('spree.workshops.form.town') %></th>
+        <th><%= t('spree.workshops.form.price_for_car') %></th>
+        <th><%= t('spree.workshops.form.price_for_moto') %></th>
+      </tr>
+      <tbody id="list">
+        <%= render :partial => @workshops %>
+      </tbody>
+    </table>
+    <div id="paginator" class="pagination">
+      <%= paginate @workshops, :remote => true %>
+    </div>
+  <% end -%>

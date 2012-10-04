@@ -17,38 +17,41 @@
       <%= f.collection_select(:province, Spree::State.where(:country_id => 188), :id, :name, { :include_blank => true }, { 'style' => 'width:160px' }) %>
     </p>
     <p>
-      <div class="type-select" id="workshopTowns">
+      <%= f.label t('.town') %>
+      <span class="required">*</span><br/>
+      <div id="workshopTowns">
         <%= render :partial => 'towns' %>
       </div>
+    </p>
+    <p>
+      <%= f.label t('.notes') %><br/>
+      <%= f.text_area :notes, :size => "5x3" %>
     </p>
   </div>
   <div class="eight columns omega">
     <p>
       <%= f.label t('.phone') %>
       <span class="required">*</span><br/>
-      <%= f.text_field :phone %>
+      <%= f.telephone_field :phone %>
     </p>
     <p>
-      <%= f.label t('.fax') %>
-      <%= f.text_field :fax %>
+      <%= f.label t('.fax') %><br/>
+      <%= f.telephone_field :fax %>
     </p>
     <p>
-      <%= f.label t('.email') %>
-      <%= f.text_field :email %>
+      <%= f.label t('.email') %><br/>
+      <%= f.email_field :email %>
     </p>
-    <p>
-      <%= f.label t('.notes') %>
-      <%= f.text_field :notes %>
-    </p>
+
     <p>
       <%= f.label t('.price_for_car') %>
       <span class="required">*</span><br/>
-      <%= f.text_field :price_for_car %>
+      <%= f.number_field :price_for_car %>
     </p>
     <p>
       <%= f.label t('.price_for_moto') %>
       <span class="required">*</span><br/>
-      <%= f.text_field :price_for_moto %>
+      <%= f.number_field :price_for_moto %>
     </p>
   </div>
   <p>

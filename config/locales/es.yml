@@ -2,6 +2,7 @@ es:
   spree:
     workshops:
       workshop: "Alta Taller"
+      search: "Buscar Taller"
       form:
         name: "Nombre"
         address: "Direccion"
@@ -10,10 +11,12 @@ es:
         fax: "Fax"
         email: "Email"
         notes: "Notas"
-        price_for_car: "Precio Montaje Automoviles"
-        price_for_moto: "Precio Montaje Motos"
+        price_for_car: "Precio Montaje Auto"
+        price_for_moto: "Precio Montaje Moto"
         submit: "Enviar"
         town: "Poblacion"
     workshop:
+      new:
+        workshop: "Talleres"
       notices:
         success: "Se ha registrado el Taller Satisfactoriamente."

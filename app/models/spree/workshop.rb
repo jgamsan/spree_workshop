@@ -14,5 +14,10 @@ module Spree
     joins(:town).where("spree_towns.state_id = ?", state)
   }
     scope :all_states, joins(:town)
+
+    def display_price
+      Spree::Money.new(price_for_car).to_s
+    end
+
   end
 end

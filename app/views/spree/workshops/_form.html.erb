@@ -3,11 +3,11 @@
   <div class="span4">
     <p>
       <%= f.label t('.name') %>
-      <%= f.text_field :name, :class => "input-small" %>
+      <%= f.text_field :name, :class => "input-medium" %>
     </p>
     <p>
       <%= f.label t('.address') %>
-      <%= f.text_field :address %>
+      <%= f.text_field :address, :class => "input-medium" %>
     </p>
     <p>
       <%= f.label t('.province') %>
@@ -20,31 +20,31 @@
       </div>
     </p>
     <p>
-      <%= f.label t('.notes') %><br/>
+      <%= f.label t('.notes') %>
       <%= f.text_area :notes, :size => "5x3" %>
     </p>
   </div>
   <div class="span4">
     <p>
       <%= f.label t('.phone') %>
-      <%= f.telephone_field :phone %>
+      <%= f.telephone_field :phone, :class => "input-medium" %>
     </p>
     <p>
-      <%= f.label t('.fax') %><br/>
-      <%= f.telephone_field :fax %>
+      <%= f.label t('.fax') %>
+      <%= f.telephone_field :fax, :class => "input-medium" %>
     </p>
     <p>
-      <%= f.label t('.email') %><br/>
-      <%= f.email_field :email %>
+      <%= f.label t('.email') %>
+      <%= f.email_field :email, :class => "input-medium" %>
     </p>
 
     <p>
       <%= f.label t('.price_for_car') %>
-      <%= f.number_field :price_for_car %>
+      <%= f.number_field :price_for_car, :class => "input-small" %>
     </p>
     <p>
       <%= f.label t('.price_for_moto') %>
-      <%= f.number_field :price_for_moto %>
+      <%= f.number_field :price_for_moto, :class => "input-small" %>
     </p>
   </div>
   <p>

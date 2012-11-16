@@ -11,7 +11,7 @@
     </p>
     <p>
       <%= f.label t('.province') %>
-      <%= f.collection_select(:province, Spree::State.where(:country_id => 188), :id, :name, { :include_blank => true }, { 'style' => 'width:160px' }) %>
+      <%= f.collection_select(:province, Spree::State.where(:country_id => 188), :id, :name, { :include_blank => true }, :class => "span2") %>
     </p>
     <p>
       <%= f.label t('.town') %>

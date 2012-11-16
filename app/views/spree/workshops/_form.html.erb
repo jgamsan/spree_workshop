@@ -1,6 +1,6 @@
 <%= render :partial => 'spree/shared/error_messages', :locals => { :target => @workshop } %>
 <%= form_for @workshop do |f| %>
-  <div class="eight columns alpha">
+  <div class="span4">
     <p>
       <%= f.label t('.name') %>
       <span class="required">*</span><br/>
@@ -28,7 +28,7 @@
       <%= f.text_area :notes, :size => "5x3" %>
     </p>
   </div>
-  <div class="eight columns omega">
+  <div class="span4">
     <p>
       <%= f.label t('.phone') %>
       <span class="required">*</span><br/>

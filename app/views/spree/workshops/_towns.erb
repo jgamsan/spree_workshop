@@ -1,7 +1,7 @@
 <%= fields_for 'workshop' do |f| %>
   <% if towns.blank? %>
-    <%= f.collection_select :town_id, [], :id, :name, :label => "Ciudad" %>
+    <%= f.collection_select :town_id, [], :id, :name, :label => "Ciudad", :class => "span2" %>
   <% else %>
-    <%= f.select :town_id, towns.collect{ |s| [s.name,s.id]}, :label => "Ciudad", :include_blank => false %>
+    <%= f.select :town_id, towns.collect{ |s| [s.name,s.id]}, :label => "Ciudad", :include_blank => false, :class => "span2" %>
   <% end %>
 <% end %>

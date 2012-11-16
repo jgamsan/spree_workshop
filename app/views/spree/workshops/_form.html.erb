@@ -3,22 +3,18 @@
   <div class="span4">
     <p>
       <%= f.label t('.name') %>
-      <span class="required">*</span><br/>
       <%= f.text_field :name %>
     </p>
     <p>
       <%= f.label t('.address') %>
-      <span class="required">*</span><br/>
       <%= f.text_field :address %>
     </p>
     <p>
       <%= f.label t('.province') %>
-      <span class="required">*</span><br/>
       <%= f.collection_select(:province, Spree::State.where(:country_id => 188), :id, :name, { :include_blank => true }, { 'style' => 'width:160px' }) %>
     </p>
     <p>
       <%= f.label t('.town') %>
-      <span class="required">*</span><br/>
       <div id="workshopTowns">
         <%= render :partial => 'towns' %>
       </div>
@@ -31,7 +27,6 @@
   <div class="span4">
     <p>
       <%= f.label t('.phone') %>
-      <span class="required">*</span><br/>
       <%= f.telephone_field :phone %>
     </p>
     <p>
@@ -45,12 +40,10 @@
 
     <p>
       <%= f.label t('.price_for_car') %>
-      <span class="required">*</span><br/>
       <%= f.number_field :price_for_car %>
     </p>
     <p>
       <%= f.label t('.price_for_moto') %>
-      <span class="required">*</span><br/>
       <%= f.number_field :price_for_moto %>
     </p>
   </div>

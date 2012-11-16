@@ -4,6 +4,7 @@ module Spree
                     :price_for_car, :price_for_moto, :province
     attr_accessor :province
     belongs_to :town
+    has_many :orders
     validates_format_of :email,
                         :with    => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i,
                         :message => "email incorrecto",
@@ -14,5 +15,10 @@ module Spree
     joins(:town).where("spree_towns.state_id = ?", state)
   }
     scope :all_states, joins(:town)
+
+    def display_price
+      Spree::Money.new(price_for_car).to_s
+    end
+
   end
 end

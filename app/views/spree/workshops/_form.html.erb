@@ -1,9 +1,9 @@
 <%= render :partial => 'spree/shared/error_messages', :locals => { :target => @workshop } %>
-<%= form_for @workshop do |f| %>
+<%= form_for @workshop, :html => {:class => "form-horizontal"} do |f| %>
   <div class="span4">
     <p>
       <%= f.label t('.name') %>
-      <%= f.text_field :name %>
+      <%= f.text_field :name, :class => "input-small" %>
     </p>
     <p>
       <%= f.label t('.address') %>

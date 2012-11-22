@@ -11,7 +11,11 @@ module Spree
     end
 
     def search
-      @workshops = Spree::Workshop.by_state(params[:Provincia]).order(:name).page params[:page]
+      if params[:Provincia] == "0"
+        @workshops = Spree::Workshop.all_states.order(:name).page params[:page]
+      else
+        @workshops = Spree::Workshop.by_state(params[:Provincia]).order(:name).page params[:page]
+      end
 
       respond_to do |format|
         format.html

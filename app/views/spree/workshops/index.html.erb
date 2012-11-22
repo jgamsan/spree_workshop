@@ -2,12 +2,12 @@
 <br />
 <%= form_tag search_workshops_path, :method => 'get', :remote => true do %>
   <%= select_tag "Provincia", options_from_collection_for_select(@states, "id", "name") %>
-  <%= submit_tag "Buscar" %>
+  <%= submit_tag "Buscar", :class => "btn btn-primary" %>
 <% end -%>
 
 <br /><br /><br />
   <% unless @workshops.empty? -%>
-    <table class="table table-striped">
+    <table class="table table-striped table-bordered">
       <tr>
         <th><%= t('spree.workshops.form.name') %></th>
         <th><%= t('spree.workshops.form.address') %></th>

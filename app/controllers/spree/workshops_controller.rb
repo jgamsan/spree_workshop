@@ -1,6 +1,6 @@
 module Spree
   class WorkshopsController < BaseController
-
+    layout "contenido"
     def index
       @states = Spree::State.where(:country_id => 188)
       @workshops = Spree::Workshop.all_states.order(:name).page params[:page]

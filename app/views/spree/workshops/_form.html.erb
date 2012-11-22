@@ -1,6 +1,6 @@
 <%= render :partial => 'spree/shared/error_messages', :locals => { :target => @workshop } %>
 <%= form_for @workshop, :html => {:class => "form-horizontal"} do |f| %>
-  <div class="span4">
+  <div class="span5">
     <p>
       <%= f.label t('.name') %>
       <%= f.text_field :name, :class => "input-medium" %>
@@ -24,7 +24,7 @@
       <%= f.text_area :notes, :size => "5x3" %>
     </p>
   </div>
-  <div class="span4">
+  <div class="span5">
     <p>
       <%= f.label t('.phone') %>
       <%= f.telephone_field :phone, :class => "input-medium" %>
@@ -48,6 +48,6 @@
     </p>
   </div>
   <p>
-    <%= f.submit t('.submit'), :alt => t('.submit'), :id => 'workshop_submit', :title => t('.submit') %>
+    <%= f.submit t('.submit'), :alt => t('.submit'), :id => 'workshop_submit', :title => t('.submit'), :class => "btn btn-primary" %>
   </p>
 <% end %>

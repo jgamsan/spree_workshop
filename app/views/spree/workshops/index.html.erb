@@ -1,7 +1,7 @@
 <h1>Buscando Taller</h1>
 <br />
 <%= form_tag search_workshops_path, :method => 'get', :remote => true do %>
-  <%= select_tag "Provincia", options_for_select([[0, "Todas"]] + @states.map {|t| [t.id, t.name]}) %>
+  <%= select_tag "Provincia", options_for_select([["Todas", 0]] + @states.map {|t| [t.name, t.id]}) %>
   <%= submit_tag "Buscar", :class => "btn btn-primary" %>
 <% end -%>
 

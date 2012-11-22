@@ -1,53 +1,68 @@
 <%= render :partial => 'spree/shared/error_messages', :locals => { :target => @workshop } %>
 <%= form_for @workshop, :html => {:class => "form-horizontal"} do |f| %>
-  <div class="span5">
-    <p>
-      <%= f.label t('.name') %>
-      <%= f.text_field :name, :class => "input-medium" %>
-    </p>
-    <p>
-      <%= f.label t('.address') %>
-      <%= f.text_field :address, :class => "input-medium" %>
-    </p>
-    <p>
-      <%= f.label t('.province') %>
-      <%= f.collection_select(:province, Spree::State.where(:country_id => 188), :id, :name, { :include_blank => true }, :class => "span2") %>
-    </p>
-    <p>
-      <%= f.label t('.town') %>
-      <div id="workshopTowns">
+  <div class="span6">
+    <div class="control-group">
+      <label class="control-label" for="inputEmail"><%= t('.name') %></label>
+      <div class="controls">
+        <%= f.text_field :name, :class => "input-medium" %>
+      </div>
+    </div>
+        <div class="control-group">
+      <label class="control-label" for="inputEmail"><%= t('.address') %></label>
+      <div class="controls">
+        <%= f.text_field :address, :class => "input-medium" %>
+      </div>
+    </div>
+        <div class="control-group">
+      <label class="control-label" for="inputEmail"><%= t('.province') %></label>
+      <div class="controls">
+        <%= f.collection_select(:province, Spree::State.where(:country_id => 188), :id, :name, { :include_blank => true }, :class => "span2") %>
+      </div>
+    </div>
+        <div class="control-group">
+      <label class="control-label" for="inputEmail"><%= t('.town') %></label>
+      <div class="controls" id="workshopTowns">
         <%= render :partial => 'towns' %>
       </div>
-    </p>
-    <p>
-      <%= f.label t('.notes') %>
-      <%= f.text_area :notes, :size => "5x3" %>
-    </p>
+    </div>
+        <div class="control-group">
+      <label class="control-label" for="inputEmail"><%= t('.notes') %></label>
+      <div class="controls">
+        <%= f.text_area :notes, :size => "5x3" %>
+      </div>
+    </div>
   </div>
-  <div class="span5">
-    <p>
-      <%= f.label t('.phone') %>
-      <%= f.telephone_field :phone, :class => "input-medium" %>
-    </p>
-    <p>
-      <%= f.label t('.fax') %>
-      <%= f.telephone_field :fax, :class => "input-medium" %>
-    </p>
-    <p>
-      <%= f.label t('.email') %>
-      <%= f.email_field :email, :class => "input-medium" %>
-    </p>
-
-    <p>
-      <%= f.label t('.price_for_car') %>
-      <%= f.number_field :price_for_car, :class => "input-small" %>
-    </p>
-    <p>
-      <%= f.label t('.price_for_moto') %>
-      <%= f.number_field :price_for_moto, :class => "input-small" %>
-    </p>
+  <div class="span6">
+    <div class="control-group">
+      <label class="control-label" for="inputEmail"><%= t('.phone') %></label>
+      <div class="controls">
+        <%= f.telephone_field :phone, :class => "input-medium" %>
+      </div>
+    </div>
+        <div class="control-group">
+      <label class="control-label" for="inputEmail"><%= t('.fax') %></label>
+      <div class="controls">
+        <%= f.telephone_field :fax, :class => "input-medium" %>
+      </div>
+    </div>
+        <div class="control-group">
+      <label class="control-label" for="inputEmail"><%= t('.email') %></label>
+      <div class="controls">
+        <%= f.email_field :email, :class => "input-medium" %>
+      </div>
+    </div>
+        <div class="control-group">
+      <label class="control-label" for="inputEmail"><%= t('.price_for_car') %></label>
+      <div class="controls">
+        <%= f.number_field :price_for_car, :class => "input-small" %>
+      </div>
+    </div>
+        <div class="control-group">
+      <label class="control-label" for="inputEmail"><%= t('.price_for_moto') %></label>
+      <div class="controls">
+        <%= f.number_field :price_for_moto, :class => "input-small" %>
+      </div>
+    </div>
   </div>
-  <p>
     <%= f.submit t('.submit'), :alt => t('.submit'), :id => 'workshop_submit', :title => t('.submit'), :class => "btn btn-primary" %>
-  </p>
 <% end %>

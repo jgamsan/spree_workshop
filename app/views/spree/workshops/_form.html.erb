@@ -31,6 +31,7 @@
         <%= f.text_area :notes, :size => "5x3" %>
       </div>
     </div>
+    <%= f.submit t('.submit'), :alt => t('.submit'), :id => 'workshop_submit', :title => t('.submit'), :class => "btn btn-primary" %>
   </div>
   <div class="span6">
     <div class="control-group">
@@ -64,5 +65,4 @@
       </div>
     </div>
   </div>
-    <%= f.submit t('.submit'), :alt => t('.submit'), :id => 'workshop_submit', :title => t('.submit'), :class => "btn btn-primary" %>
 <% end %>

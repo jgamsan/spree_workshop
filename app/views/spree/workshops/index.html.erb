@@ -1,25 +1,27 @@
-<h1>Buscando Taller</h1>
-<br />
-<%= form_tag search_workshops_path, :method => 'get', :remote => true do %>
-  <%= select_tag "Provincia", options_for_select([["Todas", 0]] + @states.map {|t| [t.name, t.id]}) %>
-  <%= submit_tag "Buscar", :class => "btn btn-primary" %>
-<% end -%>
-
-<br /><br /><br />
-  <% unless @workshops.empty? -%>
-    <table class="table table-striped table-bordered">
-      <tr>
-        <th><%= t('spree.workshops.form.name') %></th>
-        <th><%= t('spree.workshops.form.address') %></th>
-        <th><%= t('spree.workshops.form.town') %></th>
-        <th><%= t('spree.workshops.form.price_for_car') %></th>
-        <th><%= t('spree.workshops.form.price_for_moto') %></th>
-      </tr>
-      <tbody id="list">
-        <%= render :partial => @workshops %>
-      </tbody>
-    </table>
-    <div id="paginator" class="pagination">
-      <%= paginate @workshops, :remote => true %>
-    </div>
+<% content_for :taller do -%>
+  <h1>Buscando Taller</h1>
+  <br />
+  <%= form_tag search_workshops_path, :method => 'get', :remote => true do %>
+    <%= select_tag "Provincia", options_for_select([["Todas", 0]] + @states.map {|t| [t.name, t.id]}) %>
+    <%= submit_tag "Buscar", :class => "btn btn-primary" %>
   <% end -%>
+
+  <br /><br /><br />
+    <% unless @workshops.empty? -%>
+      <table class="table table-striped table-bordered">
+        <tr>
+          <th><%= t('spree.workshops.form.name') %></th>
+          <th><%= t('spree.workshops.form.address') %></th>
+          <th><%= t('spree.workshops.form.town') %></th>
+          <th><%= t('spree.workshops.form.price_for_car') %></th>
+          <th><%= t('spree.workshops.form.price_for_moto') %></th>
+        </tr>
+        <tbody id="list">
+          <%= render :partial => @workshops %>
+        </tbody>
+      </table>
+      <div id="paginator" class="pagination">
+        <%= paginate @workshops, :remote => true %>
+      </div>
+    <% end -%>
+<% end -%>
